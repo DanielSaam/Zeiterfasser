@@ -2,6 +2,8 @@
     <string name="app_name">Zeiterfasser</string>
 
     // Textview
+    <string name="string_text_startBeschreibung">Nutze deine Zeit sinnvoll!
+        Setze mit einem Klick die Startzeit und verschaffe dir einen besseren Überblick von deinem Tagesgeschehen.</string>
     <string name="string_text_startzeit">Startzeit:</string>
     <string name="string_text_endzeit">Endzeit:</string>
 

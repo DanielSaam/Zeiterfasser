@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="dimen_textview">24sp</dimen>
+    <dimen name="dimen_textview_beschreibung">18sp</dimen>
     <dimen name="dimen_button">24sp</dimen>
 </resources>
