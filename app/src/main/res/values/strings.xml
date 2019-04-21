@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Zeiterfasser</string>
+
+    // Textview
+    <string name="string_text_startzeit">Startzeit:</string>
+    <string name="string_text_endzeit">Endzeit:</string>
+
+    // Button
+    <string name="string_button_startzeit">Startzeit setzen</string>
+    <string name="string_button_endzeit">Endzeit setzen</string>
+</resources>
