@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,11 +23,9 @@ public class MainActivity extends AppCompatActivity {
                 kalender.get(Calendar.MONTH),
                 kalender.get(Calendar.YEAR)};
 
-        String stringDatum = new String(String.valueOf(datum[0]) + "." +
-                String.valueOf(datum[1]) + "." +
+        return (String.valueOf(datum[0]) + "." +
+                String.valueOf(datum[1] + 1) + "." +
                 String.valueOf(datum[2]));
-
-        return stringDatum;
     }
 
     protected String initZeit () {
@@ -38,26 +34,30 @@ public class MainActivity extends AppCompatActivity {
         int[] zeit = {kalender.get(Calendar.HOUR_OF_DAY),
                 kalender.get(Calendar.MINUTE)};
 
-        String stringZeit = new String(String.valueOf(zeit[0]) + ":" +
-                String.valueOf(zeit[1]));
+        return (String.valueOf(zeit[0]) + ":" + String.valueOf(zeit[1]));
+    }
 
-        return stringZeit;
+    // Verstrichene Zeit ausrechnen
+    protected void differenzBerechnung() {
+
     }
 
     // Button Events
     public void startzeitSetzen(View view){
         String datum = initDatum();
         String zeit = initZeit();
+        String datumUhrzeit = (datum + " / " + zeit + " ");
 
-        // Button initialisieren
-        // Button buttonStartzeit = (Button) findViewById(R.id.buttonStartzeit);
         TextView textViewStartzeit = (TextView) findViewById(R.id.textStartzeitEdit);
-        textViewStartzeit.setText(datum + " / " +
-                zeit + " ");
+        textViewStartzeit.setText(datumUhrzeit);
     }
 
     public void endzeitSetzen(View view) {
-        // Button initialisieren
-        Button buttonEndzeit = (Button) findViewById(R.id.buttonEndzeit);
+        String datum = initDatum();
+        String zeit = initZeit();
+        String datumUhrzeit = (datum + " / " + zeit + " ");
+
+        TextView textViewEndzeit = (TextView) findViewById(R.id.textViewEndzeitEdit);
+        textViewEndzeit.setText(datumUhrzeit);
     }
 }
