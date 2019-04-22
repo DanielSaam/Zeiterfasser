@@ -10,6 +10,51 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
+    //
+    public String getDatumStart() {
+        return datumStart;
+    }
+
+    public void setDatumStart(String datumStart) {
+        this.datumStart = datumStart;
+    }
+
+    private String datumStart;
+    //
+
+    public String getDatumEnd() {
+        return datumEnd;
+    }
+
+    public void setDatumEnd(String datumEnd) {
+        this.datumEnd = datumEnd;
+    }
+
+    private String datumEnd;
+    //
+
+    public String getTimeStart() {
+        return timeStart;
+    }
+
+    public void setTimeStart(String timeStart) {
+        this.timeStart = timeStart;
+    }
+
+    private String timeStart;
+    //
+
+    public String getTimeEnd() {
+        return timeEnd;
+    }
+
+    public void setTimeEnd(String timeEnd) {
+        this.timeEnd = timeEnd;
+    }
+
+    private String timeEnd;
+    //
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,8 +83,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Verstrichene Zeit ausrechnen
-    protected void differenzBerechnung() {
+    protected String differenzBerechnung() {
+        // Die Strings werden gesplittet, damit man damit rechnen kann
+        String stringZeitStartSplit = getTimeStart();
+        String stringZeitEndeSplit = getTimeEnd();
+        String[] arrayZeitStart;
+        String[] arrayZeitEnde;
+        int ergebnis;
 
+        String delimiter = ":"; /* Das Trennzeichen */
+
+        arrayZeitStart = stringZeitStartSplit.split(delimiter);
+        arrayZeitEnde = stringZeitEndeSplit.split(delimiter);
+
+        // Die Uhrzeit in String wird zu Integer umgewandelt
+        int stundeStart = Integer.parseInt(arrayZeitStart[0]);
+        int minuteStart = Integer.parseInt(arrayZeitStart[1]);
+        int stundeEnde = Integer.parseInt(arrayZeitEnde[0]);
+        int minuteEnde = Integer.parseInt(arrayZeitEnde[1]);
+
+        // Es wird alles zusammengezählt
+        int ergebnisStart = (stundeStart * 60) + minuteStart;
+        int ergebnisEnde = (stundeEnde * 60) + minuteEnde;
+
+        if (ergebnisStart > ergebnisEnde) {
+            ergebnis =  ergebnisStart - ergebnisEnde;
+        } else {
+            ergebnis = ergebnisEnde - ergebnisStart;
+        }
+
+        return String.valueOf(ergebnis);
     }
 
     // Button Events
@@ -50,6 +123,9 @@ public class MainActivity extends AppCompatActivity {
 
         TextView textViewStartzeit = (TextView) findViewById(R.id.textStartzeitEdit);
         textViewStartzeit.setText(datumUhrzeit);
+
+        setDatumStart(datum);
+        setTimeStart(zeit);
     }
 
     public void endzeitSetzen(View view) {
@@ -59,5 +135,13 @@ public class MainActivity extends AppCompatActivity {
 
         TextView textViewEndzeit = (TextView) findViewById(R.id.textViewEndzeitEdit);
         textViewEndzeit.setText(datumUhrzeit);
+
+        setDatumEnd(datum);
+        setTimeEnd(zeit);
+
+        String ergebnis = differenzBerechnung();
+
+        TextView textViewStartzeit = (TextView) findViewById(R.id.textStartzeitEdit);
+        textViewStartzeit.setText(ergebnis);
     }
 }
