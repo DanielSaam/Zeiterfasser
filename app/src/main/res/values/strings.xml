@@ -7,6 +7,34 @@
     <string name="string_text_startzeit">Startzeit:</string>
     <string name="string_text_endzeit">Endzeit:</string>
 
+    // Spinner
+    <string-array name="spinner_tatigkeit">
+        <item>Arbeit</item>
+        <item>Privat</item>
+        <item>Gemeinnützig</item>
+        <item>Haushalt</item>
+    </string-array>
+
+    <string-array name="spinner_tatigkeitArbeit">
+        <item>Normale Schicht</item>
+        <item>Nachtschicht</item>
+        <item>Sonderschicht</item>
+    </string-array>
+
+    <string-array name="spinner_tatigkeitPrivat">
+        <item>Platzhalter Privat</item>
+    </string-array>
+
+    <string-array name="spinner_tatigkeitGemeinnutzig">
+        <item>Platzhalter Gemeinnützig</item>
+    </string-array>
+
+    <string-array name="spinner_tatigkeitHaushalt">
+        <item>Aufräumen</item>
+        <item>Kochen</item>
+        <item>Putzen</item>
+    </string-array>
+
     // Button
     <string name="string_button_startzeit">Startzeit setzen</string>
     <string name="string_button_endzeit">Endzeit setzen</string>
