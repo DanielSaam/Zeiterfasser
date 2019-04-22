@@ -10,6 +10,7 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Setter und Getter
     //
     public String getDatumStart() {
         return datumStart;
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    // Datum und die Zeit initialisieren
     protected String initDatum () {
         Calendar kalender = Calendar.getInstance();
 
@@ -83,7 +85,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Verstrichene Zeit ausrechnen
-    protected String differenzBerechnung() {
+    protected String differenzZeitBerechnung() {
+
         // Die Strings werden gesplittet, damit man damit rechnen kann
         String stringZeitStartSplit = getTimeStart();
         String stringZeitEndeSplit = getTimeEnd();
@@ -139,9 +142,7 @@ public class MainActivity extends AppCompatActivity {
         setDatumEnd(datum);
         setTimeEnd(zeit);
 
-        String ergebnis = differenzBerechnung();
-
         TextView textViewStartzeit = (TextView) findViewById(R.id.textStartzeitEdit);
-        textViewStartzeit.setText(ergebnis);
+        textViewStartzeit.setText(differenzZeitBerechnung());
     }
 }
