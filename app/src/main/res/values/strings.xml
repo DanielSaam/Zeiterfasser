@@ -6,6 +6,8 @@
         Setze mit einem Klick die Startzeit und verschaffe dir einen besseren Überblick von deinem Tagesgeschehen.</string>
     <string name="string_text_startzeit">Startzeit:</string>
     <string name="string_text_endzeit">Endzeit:</string>
+    <string name="string_text_ort">Ort:</string>
+    <string name="string_text_pause">Pause:</string>
 
     // Spinner
     <string-array name="spinner_tatigkeit">
